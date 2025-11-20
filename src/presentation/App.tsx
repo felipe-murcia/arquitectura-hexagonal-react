@@ -6,20 +6,15 @@ import UserPage from "./pages/UserPage";
 function App() {
  
   return (
-    <>
+    <div style={{padding:60, backgroundColor:'aliceblue'}}>
       <h1>React + Arquitectura Hexagonal 2</h1>
-      <Button label="Check" icon="pi pi-check" />
+      <br />
       <ProductPage />
+      <br />
       <RecipePage />
+      <br />
       <UserPage />
-      {/* <ProductPage />
-      <ProductPage />
-      <ProductPage />
-      <ProductPage />
-      <ProductPage />
-      <ProductPage />
-      <ProductPage /> */}
-    </>
+    </div>
   )
 }
 
