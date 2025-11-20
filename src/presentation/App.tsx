@@ -1,6 +1,7 @@
 import ProductPage from "./pages/ProductPage"
 import { Button } from 'primereact/button';
 import RecipePage from "./pages/RecipePage";
+import UserPage from "./pages/UserPage";
 
 function App() {
  
@@ -10,6 +11,7 @@ function App() {
       <Button label="Check" icon="pi pi-check" />
       <ProductPage />
       <RecipePage />
+      <UserPage />
       {/* <ProductPage />
       <ProductPage />
       <ProductPage />

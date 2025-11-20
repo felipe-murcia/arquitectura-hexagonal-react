@@ -8,16 +8,17 @@ import { Column } from 'primereact/column';
 import { Card } from 'primereact/card';
 import { Rating } from "primereact/rating";
 import type { Product } from "../../domain/entities/Product";
+import { fetchAllUsersThunk } from "../../infrastructure/store/user/userThunks";
 
-function ProductPage() {
+function UserPage() {
 
   const dispatch = useDispatch<AppDispatch>();
-  const { items, loading, error } = useSelector((state:any) => state.products);
+  const { items, loading, error } = useSelector((state:any) => state.users);
 
   console.log('data', items);
 
   useEffect(() => {
-    dispatch(fetchAllProductsThunk());
+    dispatch(fetchAllUsersThunk());
   }, [dispatch]);
 
     const ratingBodyTemplate = (product:Product) => {
@@ -26,21 +27,22 @@ function ProductPage() {
   
   return (
     <>
-        <Card title="Products List">
+        <Card title="Users List">
         {loading && <ProgressSpinner />}
         {error && <p style={{ color: 'red' }}>{error}</p>}
             <DataTable value={items} tableStyle={{ minWidth: '50rem' }} showGridlines paginator rows={10}>
                 <Column field="id" header="ID"></Column>
-                <Column field="title" header="Title"></Column>
-                <Column field="description" header="Description"></Column>
-                <Column field="category" header="Category"></Column>
-                <Column field="price" header="Price"></Column>
-                <Column field="stock" header="Stock"></Column>
-                <Column header="Rating" body={ratingBodyTemplate}></Column>
+                <Column field="firstName" header="First Name"></Column>
+                <Column field="lastName" header="Last Name"></Column>
+                <Column field="birthDate" header="Birth Date"></Column>
+                <Column field="age" header="Age"></Column>
+                <Column field="gender" header="Gender"></Column>
+                <Column field="email" header="Email"></Column>
+                <Column field="role" header="Role"></Column>
             </DataTable>
         </Card>
     </>
   )
 }
 
-export default ProductPage;
+export default UserPage;
