@@ -1,5 +1,4 @@
 import ProductPage from "./pages/ProductPage"
-import { Button } from 'primereact/button';
 import RecipePage from "./pages/RecipePage";
 import UserPage from "./pages/UserPage";
 
