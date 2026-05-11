@@ -1,13 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllProductsThunk } from "../../infrastructure/store/product/productThunks";
 import type { AppDispatch } from "../../infrastructure/store/index";
 import { useEffect } from 'react';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Card } from 'primereact/card';
-import { Rating } from "primereact/rating";
-import type { Product } from "../../domain/entities/Product";
 import { fetchAllUsersThunk } from "../../infrastructure/store/user/userThunks";
 
 function UserPage() {
@@ -20,10 +17,6 @@ function UserPage() {
   useEffect(() => {
     dispatch(fetchAllUsersThunk());
   }, [dispatch]);
-
-    const ratingBodyTemplate = (product:Product) => {
-        return <Rating value={product.rating}  cancel={false} />;
-    };
   
   return (
     <>

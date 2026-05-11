@@ -1,5 +1,4 @@
 // src/infrastructure/adapters/RecipeAPIRepository.ts
-import type { Recipe } from '../../domain/entities/Recipe';
 import type { User } from '../../domain/entities/User';
 import type { AxiosInstance } from 'axios';
 import type { UserServicePort } from '../../domain/ports/UserServicePort';
